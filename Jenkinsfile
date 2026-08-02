@@ -1,11 +1,11 @@
-pipeline{
+wpipeline{
     agent any
     tools{
-        jdk 'jdk'
-        nodejs 'node17'
+        jdk 'jdk17'
+        nodejs 'node20'
     }
     environment {
-        SCANNER_HOME=tool 'sonar-scanner'
+        SCANNER_HOME=tool 'SonarScanner'
     }
     stages {
         stage('clean workspace'){
@@ -15,7 +15,7 @@ pipeline{
         }
         stage('Checkout from Git'){
             steps{
-                git branch: 'main', credentialsId: 'github-token', url: 'https://github.com/Aseemakram19/starbucks-kubernetes.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/suman-k0609/starbucks-kubernetes.git'
             }
         }
         stage("Sonarqube Analysis "){
