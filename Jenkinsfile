@@ -61,7 +61,7 @@ sh "docker push suman0603/starbucks:latest"
         }
         stage('App Deploy to Docker container'){
             steps{
-                sh 'docker run -d --name starbucks -p 3000:3000 aseemakram19/starbucks:latest'
+                sh 'docker run -d --name starbucks -p 3000:3000 suman0603/starbucks:latest'
             }
         }
 
