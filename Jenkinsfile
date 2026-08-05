@@ -46,7 +46,7 @@ pipeline{
         stage("Docker Build & Push"){
             steps{
                 script{
-                   withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
+                   withDockerRegistry(credentialsId: 'docker', toolName: 'Docker'){   
                        sh "docker build -t starbucks ."
                        sh "docker tag starbucks suman0603/starbucks:latest"
 sh "docker push suman0603/starbucks:latest"
@@ -82,9 +82,9 @@ sh "docker push suman0603/starbucks:latest"
                     <p>Started by: ${buildUser}</p>
                     <p>Build URL: <a href="${env.BUILD_URL}">${env.BUILD_URL}</a></p>
                 """,
-                to: 'mohdaseemakram19@gmail.com',
-                from: 'mohdaseemakram19@gmail.com',
-                replyTo: 'mohdaseemakram19@gmail.com',
+                to: 'suman.kumari060904@gmail.com',
+                from: 'suman.kumari060904@gmail.com',
+                replyTo: 'suman.kumari060904@gmail.com',
                 mimeType: 'text/html',
                 attachmentsPattern: 'trivyfs.txt,trivyimage.txt'
             )
